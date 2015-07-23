@@ -1,3 +1,4 @@
-<div ng-repeat="post in posts | orderBy: '-upvotes'">
-  {{post.title}} - upvotes: {{post.upvotes}}
+<div ng-repeat="idea in ideas | orderBy: '-upvotes'">
+<span ng-click="voteForIdea(idea)">^</span>
+  {{idea.name}} {{ idea.tags }} - upvotes: {{idea.upvotes}}
 </div>

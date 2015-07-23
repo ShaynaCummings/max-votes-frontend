@@ -9,17 +9,26 @@
  */
 angular.module('maxVotes')
   .controller('MainCtrl', function ($scope) {
-    $scope.posts = [
-		  {title: 'post 1', upvotes: 5},
-		  {title: 'post 2', upvotes: 2},
-		  {title: 'post 3', upvotes: 15},
-		  {title: 'post 4', upvotes: 9},
-		  {title: 'post 5', upvotes: 4}
+    $scope.ideas = [
+		  {name: 'post 1', tags: 'test tag', upvotes: 5},
+		  {name: 'post 2', upvotes: 2},
+		  {name: 'post 3', upvotes: 15},
+		  {name: 'post 4', upvotes: 9},
+		  {name: 'post 5', upvotes: 4}
 		];
 
-    $scope.addPost = function(){
-    	if(!$scope.title || $scope.title === '') { return; }
-		$scope.posts.push({title: $scope.title, upvotes: 0});
-		$scope.title = '';
+    $scope.addIdea = function(){
+    	if(!$scope.name || $scope.name === '') { return; }
+		$scope.ideas.push({
+			name: $scope.name, 
+			tags: $scope.tags,
+			upvotes: 0
+		});
+		$scope.name = '';
 	};
+
+	$scope.voteForIdea = function(idea) {
+	  idea.upvotes += 1;
+	};
+
   });

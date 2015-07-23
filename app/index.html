@@ -66,8 +66,9 @@
       <ui-view></ui-view>
     </div>
 
-   <form ng-submit="addPost()">
-    <input type="text" ng-model="title"></input>
+   <form ng-submit="addIdea()">
+    <input type="text" placeholder="Idea" ng-model="name"></input>
+    <input type="text" placeholder="Tags" ng-model="tags"></input>
     <button type="submit">Post</button>
   </form>
 
