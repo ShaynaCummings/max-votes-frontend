@@ -22,7 +22,15 @@ angular.module('maxVotes')
 					var allIdeas = [];
 
 					$http.get('http://max-votes.herokuapp.com/ideas').success(function(data) {
-							console.log(data);
+
+							var k;
+							for (k in data) {
+
+								if(data[k].rank === null) {
+									data[k].rank = 0;
+								}
+							}
+
 							angular.copy(data, allIdeas);
 						}
 					);
@@ -31,7 +39,14 @@ angular.module('maxVotes')
 				},
 
 				submitIdea: function(idea){
+
 					console.log(idea);
+
+					$http.post('http://max-votes.herokuapp/ideas', idea).
+					  success(function(data) {
+					    console.log('success!');
+					    console.log(data);
+					  });
 				}
 			};
 		}

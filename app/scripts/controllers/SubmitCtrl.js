@@ -18,7 +18,6 @@ angular.module('maxVotes')
 				if(!$scope.title || $scope.title === '') { return; }
 
 				var newIdea = {};
-
 				newIdea.title = $scope.title;
 				newIdea.link = $scope.link;
 				newIdea.description = $scope.description;
@@ -27,6 +26,9 @@ angular.module('maxVotes')
 				IdeaFactory.submitIdea(newIdea);
 
 				$scope.title = '';
+				$scope.link = '';
+				$scope.description = '';
+				$scope.tags = '';
 			};
 
 

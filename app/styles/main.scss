@@ -136,15 +136,29 @@ table.ideas {
     font-size: 11px;
   }
 
+  td {
+    padding: 10px;
+  }
+
   .key {
+    padding-top: 15px;
     color: #f8e7dd;
   }
 
   .votes {
     color: #5db9d1;
+
+    i {
+      margin-left: -2px;
+    }
+
+    i, .span {
+      display: block;
+    }
   }
 
   .title {
+    padding-top: 15px;
     a {
       text-transform: uppercase;
       font-weight: 300;
@@ -157,12 +171,14 @@ table.ideas {
   }
 
   .submitted {
+    padding-top: 15px;
     color: #7fcee1;
     font-weight: 300;
     font-size: 11px;
   }
 
   .comments {
+    padding-top: 15px;
     color: #7fcee1;
     font-weight: 300;
     font-size: 11px;
@@ -184,6 +200,8 @@ table.ideas {
   border-top: 1px solid #5db9d1;
   border-right: 1px solid #5db9d1;
   border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  min-height: 600px;
   padding: 20px 30px 30px 30px;
 
   h2 {
@@ -219,6 +237,8 @@ table.ideas {
 
 }
 
+.bot-links{float: left; width: 100%; padding-top: 10px;}
+.bot-links a{display: inline-block; padding: 10px 15px; background: #fff; font-size: 12px; margin-bottom: 5px; color: #de7f38; text-decoration:none; border: 2px solid #de7f38; font-size: 16px; font-weight: 300; }
 
 .custom-search-form{
     margin-top:5px;

@@ -13,12 +13,15 @@
 			  </tr>
 			</thead>
 			<tbody>
-			  <tr ng-repeat="idea in allIdeas | orderBy:'user_id' ">
+			 <tr ng-repeat="idea in allIdeas | orderBy:'rank'">
 			  	<td class="key"> {{ idea.id }} </td>
-			  	<td class="votes"> {{ idea.rank }} </td>
+			  	<td class="votes"> 
+			  		<i class="fa fa-arrow-up"></i>
+			  		<span>{{ idea.rank }}</span> 
+			  	</td>
 			    <td class="title"> <a ui-sref='ideas.single({ id: idea.id })'> {{ idea.title }} </a></td>
-			    <td class="submitted"> {{ idea.user.name }}</td>
-			    <td class="comments"></td>
+			    <td class="submitted"> 2 hrs ago by {{ idea.user.name }}</td>
+			    <td class="comments">35 comments</td>
 			  </tr>
 			  
 			</tbody>
