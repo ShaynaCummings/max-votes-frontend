@@ -2,36 +2,53 @@
 
 /**
  * @ngdoc overview
- * @name maxVotesFrontendApp
+ * @name maxVotes
  * @description
- * # maxVotesFrontendApp
+ * # maxVotes
  *
  * Main module of the application.
  */
-angular
-  .module('maxVotesFrontendApp', [
+angular.module('maxVotes', [
+    /*
+     * Angular Modules
+     */
     'ngAnimate',
     'ngAria',
     'ngCookies',
-    'ngMessages',
     'ngResource',
-    'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
+    'ngTouch',
+    /*
+     * 3rd Party Modules
+     */
+    'ui.router'
+])
+
+.config([
+  '$stateProvider',
+  '$urlRouterProvider',
+  function($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('/', {
+        url: '/',
+        templateUrl: 'views/topvotes.html',
+        controller: 'TopVotesCtrl'
       });
-  });
+
+    $stateProvider
+      .state('/newposts', {
+        url: '/newposts',
+        templateUrl: 'views/newposts.html',
+        controller: 'NewPostsCtrl'
+      });
+
+    $stateProvider
+      .state('/explore', {
+        url: '/explore',
+        templateUrl: 'views/explore.html',
+        controller: 'ExploreCtrl'
+      });
+
+    $urlRouterProvider.otherwise('/');
+}]);

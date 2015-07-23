@@ -13,9 +13,9 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="maxvotes">
+  <body ng-app="maxVotes" ng-controller="MainCtrl">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -51,24 +51,24 @@
         </div>
       </div>
     </div>
-
+  
     <div class="navigation">
       <div class="container">
         <ol>
-          <li class="active"><a href="#">Top Votes</a></li>
-          <li><a href="#">New Posts</a></li>
-          <li><a href="#">Explore</a></li>
+          <li class="active"><a href="#/topvotes">Top Votes</a></li>
+          <li><a href="#/newposts">New Posts</a></li>
+          <li><a href="#/explore">Explore</a></li>
         </ol>
       </div>
     </div>
 
     <div class="container">
-      <div ng-view=""></div>
+      <ui-view></ui-view>
     </div>
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from Shayna, Laura, Carrie and Kyle.</p>
+        <p><span class="glyphicon glyphicon-heart"></span>     {{ awesomePeople }}</p>
       </div>
     </div>
 
@@ -97,13 +97,16 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/MainCtrl.js"></script>
+    <script src="scripts/controllers/TopVotesCtrl.js"></script>
+    <script src="scripts/controllers/NewPostsCtrl.js"></script>
+    <script src="scripts/controllers/ExploreCtrl.js"></script>
     <!-- endbuild -->
 </body>
 </html>

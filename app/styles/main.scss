@@ -72,7 +72,7 @@ body {
   width: 100%;
 
   .container {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #de7f3d;
   }
 
   ol {
@@ -88,10 +88,13 @@ body {
     a{
       text-transform: uppercase;
       padding: 0px 10px;
+      font-weight: 300;
+      font-size: 16px;
+      color: #de7f3d;
 
       &:hover {
         text-decoration: none;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid #de7f3d;
       }
     }
 
@@ -103,6 +106,9 @@ body {
   padding-top: 19px;
   color: #777;
 }
+
+
+
 
 .container-narrow > hr {
   margin: 30px 0;
