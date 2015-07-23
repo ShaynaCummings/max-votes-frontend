@@ -37,22 +37,29 @@ angular.module('maxVotes', [
       });
 
     $stateProvider
-      .state('ideas.new', {
-        url: '/ideas/new',
-        templateUrl: 'views/ideas-new.html',
-        controller: 'MainCtrl'
-      });
-
-    $stateProvider
-      .state('ideas.single', {
+      .state('idea', {
         url: '/ideas/:id',
         templateUrl: 'views/idea.html',
         controller: 'IdeaCtrl'
       });
 
     $stateProvider
-      .state('/explore', {
-        url: '/explore',
+      .state('submit', {
+        url: '/submit',
+        templateUrl: 'views/submit.html',
+        controller: 'SubmitCtrl'
+      });
+
+    $stateProvider
+      .state('new-ideas', {
+        url: '/newideas',
+        templateUrl: 'views/ideas-new.html',
+        controller: 'MainCtrl'
+      });
+
+    $stateProvider
+      .state('explore', {
+        url: '/exploreideas',
         templateUrl: 'views/explore.html',
         controller: 'ExploreCtrl'
       });
