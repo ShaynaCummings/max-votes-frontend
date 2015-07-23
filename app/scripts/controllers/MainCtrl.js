@@ -9,5 +9,5 @@
  */
 angular.module('maxVotes')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomePeople = ['Shayna', 'Laura', 'Carrie', 'Kyle'];
+    $scope.name = 'test';
   });

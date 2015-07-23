@@ -32,15 +32,15 @@ angular.module('maxVotes', [
     $stateProvider
       .state('/', {
         url: '/',
-        templateUrl: 'views/topvotes.html',
-        controller: 'TopVotesCtrl'
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
       });
 
     $stateProvider
-      .state('/newposts', {
-        url: '/newposts',
-        templateUrl: 'views/newposts.html',
-        controller: 'NewPostsCtrl'
+      .state('/topposts', {
+        url: '/topposts',
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
       });
 
     $stateProvider
