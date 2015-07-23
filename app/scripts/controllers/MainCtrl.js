@@ -18,7 +18,7 @@ angular.module('maxVotes')
 
 
 			$scope.voteForIdea = function(idea) {
-				idea.upvotes += 1;
+				idea.rank += 1;
 			};
 		}
 ]);

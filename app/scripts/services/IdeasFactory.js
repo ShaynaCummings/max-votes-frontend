@@ -42,8 +42,16 @@ angular.module('maxVotes')
 
 					console.log(idea);
 
-					$http.post('http://max-votes.herokuapp/ideas', idea).
-					  success(function(data) {
+					// $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+					var req = {
+						method: 'POST',
+				    	url: 'http://max-votes.herokuapp.com/ideas',
+				    	data: idea,
+				    	headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}
+				    };
+
+					$http(req).success(function(data) {
 					    console.log('success!');
 					    console.log(data);
 					  });

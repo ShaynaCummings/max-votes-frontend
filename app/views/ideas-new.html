@@ -16,7 +16,7 @@
 			 <tr ng-repeat="idea in allIdeas | orderBy:'rank'">
 			  	<td class="key"> {{ idea.id }} </td>
 			  	<td class="votes"> 
-			  		<i class="fa fa-arrow-up"></i>
+			  		<span ng-click="voteForIdea(idea)"><i class="fa fa-arrow-up"></i></span>
 			  		<span>{{ idea.rank }}</span> 
 			  	</td>
 			    <td class="title"> <a ui-sref='ideas.single({ id: idea.id })'> {{ idea.title }} </a></td>
