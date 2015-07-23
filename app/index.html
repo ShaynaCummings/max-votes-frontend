@@ -33,10 +33,11 @@
               <span class="icon-bar"></span>
             </button> -->
 
-            <a class="navbar-brand" href="#/">MaxVotes</a>
+            <a class="navbar-brand" href="#/"><img src="/images/maxwell-mindshare-white.png" /></a>
 
             <div class="navbar-user">
-              <a href="#">sunsplash's account <span class="chevron bottom"</span></a>
+              <a href="#">sunsplash's account</a>
+              <a href="#">logout</a>
             </div>
           </div>
 
@@ -55,9 +56,9 @@
     <div class="navigation">
       <div class="container">
         <ol>
-          <li class="active"><a href="#/topvotes">Top Votes</a></li>
-          <li><a href="#/newposts">New Posts</a></li>
-          <li><a href="#/explore">Explore</a></li>
+          <li ui-sref-active="active"><a ui-sref="ideas">Top Ideas</a></li>
+          <li ui-sref-active="active"><a ui-sref="ideas.new">New Ideas</a></li>
+          <li ui-sref-active="active"><a ui-sref="explore">Explore</a></li>
         </ol>
       </div>
     </div>
@@ -67,28 +68,11 @@
     </div>
 
    <form ng-submit="addIdea()">
+    <input type="text" placeholder="id" ng-model='id'></input>
     <input type="text" placeholder="Idea" ng-model="name"></input>
     <input type="text" placeholder="Tags" ng-model="tags"></input>
     <button type="submit">Post</button>
   </form>
-
-<!--     <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span>     {{ awesomePeople }}</p>
-      </div>
-    </div> -->
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -110,9 +94,8 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/MainCtrl.js"></script>
-    <script src="scripts/controllers/PostsCtrl.js"></script>
-    <script src="scripts/controllers/ExploreCtrl.js"></script>
-    <script src="scripts/services/IdeaFactory.js"></script>
+    <script src="scripts/controllers/IdeaCtrl.js"></script>
+    <script src="scripts/services/IdeasFactory.js"></script>
     <!-- endbuild -->
 </body>
 </html>

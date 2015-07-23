@@ -8,20 +8,20 @@
  * Factory in maxVotes
  */
 angular.module('maxVotes')
-	.factory('idea', [
+	.factory('IdeaFactory', [
 		'$http',
 		function($http){
 
 			return {
 				getAllIdeas: function(){
-					var ideas = {};
+					var allIdeas = [];
 
 					$http.get('http://max-votes.herokuapp.com/ideas').success(function(data) {
-							angular.copy(data, ideas);
+							angular.copy(data, allIdeas);
 						}
 					);
 
-					return ideas;
+					return allIdeas;
 				}
 			};
 		}

@@ -30,17 +30,24 @@ angular.module('maxVotes', [
   function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('/', {
-        url: '/',
-        templateUrl: 'views/posts.html',
-        controller: 'PostsCtrl'
+      .state('ideas', {
+        url: '/ideas',
+        templateUrl: 'views/ideas.html',
+        controller: 'MainCtrl'
       });
 
     $stateProvider
-      .state('/topposts', {
-        url: '/topposts',
-        templateUrl: 'views/posts.html',
-        controller: 'PostsCtrl'
+      .state('ideas.new', {
+        url: '/ideas/new',
+        templateUrl: 'views/ideas-new.html',
+        controller: 'MainCtrl'
+      });
+
+    $stateProvider
+      .state('ideas.single', {
+        url: '/ideas/:id',
+        templateUrl: 'views/idea.html',
+        controller: 'IdeaCtrl'
       });
 
     $stateProvider
@@ -50,5 +57,5 @@ angular.module('maxVotes', [
         controller: 'ExploreCtrl'
       });
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/ideas');
 }]);
