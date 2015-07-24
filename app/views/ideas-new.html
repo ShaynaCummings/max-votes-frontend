@@ -13,17 +13,19 @@
 			  </tr>
 			</thead>
 			<tbody>
-			 <tr ng-repeat="idea in allIdeas | orderBy:'rank'">
-			  	<td class="key"> {{ idea.id }} </td>
-			  	<td class="votes"> 
+			<ol>
+			 <tr ng-repeat="idea in allIdeas | orderBy:'-created_at'">
+			  	<td class="key"> {{ $index+1 }} </td>
+			  	<td class="votes">
 			  		<span ng-click="voteForIdea(idea)"><i class="fa fa-arrow-up"></i></span>
-			  		<span>{{ idea.rank }}</span> 
+			  		<span>{{ idea.rank }}</span>
 			  	</td>
 			    <td class="title"> <a ui-sref='ideas.single({ id: idea.id })'> {{ idea.title }} </a></td>
-			    <td class="submitted"> 2 hrs ago by {{ idea.user.name }}</td>
+			    <td class="submitted"> <span am-time-ago="idea.created_at"></span> by {{ idea.user.name }}</td>
 			    <td class="comments">35 comments</td>
 			  </tr>
-			  
+			  </ol>
+
 			</tbody>
 		</table>
 
@@ -50,6 +52,6 @@
 
 
 		</div>
-		
+
 	</div>
 </div>

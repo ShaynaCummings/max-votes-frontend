@@ -21,7 +21,8 @@ angular.module('maxVotes', [
     /*
      * 3rd Party Modules
      */
-    'ui.router'
+    'ui.router',
+    'angularMoment'
 ])
 
 .config([
